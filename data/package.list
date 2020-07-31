@@ -1,0 +1,36 @@
+## essential
+build-essential
+git
+wget
+apt-transport-https # makes shure apt can handle https sources
+
+## tools
+nethogs
+htop
+ffmpeg
+p7zip
+cron
+groff
+gparted
+timeshift
+youtube-dl
+
+## languages
+python3
+
+## openvpn
+openvpn
+network-manager-openvpn
+network-manager-openvpn-gnome
+
+## media
+cmus 
+#cmus-plugin-ffmpeg
+#celluloid
+
+## apps
+qbittorrent
+#cherrytree
+cmus
+hexchat
+hexedit
