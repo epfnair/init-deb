@@ -1,5 +1,6 @@
-wget "https://update.code.visualstudio.com/latest/linux-deb-x64/stable" -O "$TMPDIR/vscode.deb"
-apt install -y "$TMPDIR/vscord.deb"
+#wget "https://update.code.visualstudio.com/latest/linux-deb-x64/stable" -O "$TMPDIR/vscode.deb"
+#dpkg -i "$TMPDIR/vscode.deb"
+#apt install -f
 
 inilog "to stop data being sent to microsoft do the following: "
 inilog 2 "disable Telemetry"
@@ -28,5 +29,5 @@ fi
 
 if [[ $INTSTALL_CODE_EXTENTIONS == true ]]; then
     echo "extentions"
-    sed -n -r "s/^[ \t]*([^ #\t]+)[ \t#]?.*$/\1/p" "$INITDATA/vscode_extentions.list" | xargs -I{} -r -- code --install-extension "{}"
+    sed -n -r "s/^[ \t]*([^ #\t]+)[ \t#]?.*$/\1/p" "$INITDATA/vscode_extentions.list" | xargs -I{} -r -- su -c 'code --install-extension "{}"' "$INITUSER"
 fi

@@ -41,12 +41,6 @@ if [[ $CONTINUE == true ]]; then
     if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
 
     echo "starting init"
-
-    # install packages # 
-    echo "updating and installing packages"
-    apt update
-    apt upgrade -y
-    sed -n -r "s/^[ \t]*([^ #\t]+)[ \t#]?.*$/\1/p" "$INITDATA/package.list" | xargs -i -r -- sudo apt-get install -y {}
     
     if [[ $ALL == true ]]; then
         for file in $sub_inits; do

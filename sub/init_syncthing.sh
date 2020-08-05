@@ -3,10 +3,9 @@ echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get -y install syncthing
 
-# the service should be generated when starting syncthing
-# if test -d "/home/$INITUSER/.config/autostart"; then
-#     cp "./data/syncthing.service" "/home/$INITUSER/.config/autostart/"
-# fi
 
-inilog "starting Start Syncing once to make shure that syncthing is properly initilized and autostarts"
-inilog "when adding new devices, restarting / reloading on the remote device might speed up the prozess"
+if test -d "/home/$INITUSER/.config/autostart"; then
+    cp "/usr/share/applications/syncthing.desktop" "/home/$INITUSER/.config/autostart/"
+fi
+
+inilog "when adding new devices, restarting / reloading on the remote device might speed up the process"

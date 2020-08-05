@@ -1,5 +1,5 @@
 # options !NO TRAILING SLASHES! #
-INITUSER="$USER"  # user
+INITUSER="epfnair"  # user
 TMPDIR="/tmp"     # folder for temporary items
 BUILDDIR="/home/$INITUSER/code/build" # folder for sub_inits that need building
 INITDIR="$(pwd)"  # root folder for init.sh
